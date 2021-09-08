@@ -1,0 +1,10 @@
+# Cleaning / Smudging strategy based off this workflow:
+# https://jnavila.github.io/plotkicadsch/
+#
+# Make sure you run the git config commands to make use of these filters
+
+# Date in .pro file. Not to be confused with the date in the .sch file, which is meaningful.
+*.pro filter=kicad_project
+
+# Power and Flags (internal) numbering.
+*.sch filter=kicad_sch
