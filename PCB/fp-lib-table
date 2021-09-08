@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name "PiicoDev RFID MFRC522")(type KiCad)(uri "P:/Team Workspace/Peter Johnston/GitHub/Hardware/CE-PiicoDev-RFID-Reader-Writer-MFRC522/PCB/PiicoDev RFID MFRC522.pretty")(options "")(descr ""))
+)
