@@ -151,7 +151,7 @@ AR Path="/609C5735/609CB689" Ref="FID?"  Part="1"
 AR Path="/609CB689" Ref="FID2"  Part="1" 
 F 0 "FID2" H 6785 7546 50  0001 L CNN
 F 1 "Fiducial" H 6785 7455 50  0001 L CNN
-F 2 "Fiducial:Fiducial_1mm_Mask2mm" H 6700 7500 50  0001 C CNN
+F 2 "CoreElectronics_Components:Fiducial_1mm_Mask2mm_No_Courtyard" H 6700 7500 50  0001 C CNN
 F 3 "~" H 6700 7500 50  0001 C CNN
 	1    6700 7500
 	1    0    0    -1  
@@ -164,7 +164,7 @@ AR Path="/609C5735/609CB68F" Ref="FID?"  Part="1"
 AR Path="/609CB68F" Ref="FID1"  Part="1" 
 F 0 "FID1" H 6785 7396 50  0001 L CNN
 F 1 "Fiducial" H 6785 7305 50  0001 L CNN
-F 2 "Fiducial:Fiducial_1mm_Mask2mm" H 6700 7350 50  0001 C CNN
+F 2 "CoreElectronics_Components:Fiducial_1mm_Mask2mm_No_Courtyard" H 6700 7350 50  0001 C CNN
 F 3 "~" H 6700 7350 50  0001 C CNN
 	1    6700 7350
 	1    0    0    -1  
@@ -935,8 +935,6 @@ Wire Wire Line
 	6050 3100 6050 3050
 Wire Wire Line
 	6050 3050 6450 3050
-Wire Wire Line
-	6250 3300 6450 3300
 Text Label 6250 3300 0    50   ~ 0
 RST
 Text Label 6250 3400 0    50   ~ 0
@@ -1036,7 +1034,7 @@ F 3 "~" H 4900 2500 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	4900 2250 4900 2350
+	4900 2250 4900 2300
 Wire Wire Line
 	4900 2650 4900 2850
 Wire Wire Line
@@ -1052,17 +1050,6 @@ F 1 "GND" H 5705 4677 50  0000 C CNN
 F 2 "" H 5700 4850 50  0001 C CNN
 F 3 "" H 5700 4850 50  0001 C CNN
 	1    5700 4850
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C C13
-U 1 1 613BE34A
-P 5700 4600
-F 0 "C13" H 5815 4646 50  0000 L CNN
-F 1 "100n" H 5815 4555 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0402_1005Metric" H 5738 4450 50  0001 C CNN
-F 3 "~" H 5700 4600 50  0001 C CNN
-	1    5700 4600
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -1088,8 +1075,6 @@ F 3 "~" H 5000 4600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	5700 4450 5700 4400
-Wire Wire Line
 	5700 4400 5350 4400
 Wire Wire Line
 	5000 4400 5000 4450
@@ -1112,7 +1097,7 @@ Wire Wire Line
 Connection ~ 5350 4800
 Wire Wire Line
 	5350 4800 5700 4800
-Text Notes 4600 4350 0    50   ~ 0
+Text Notes 4600 4150 0    50   ~ 0
 3 de-coupling caps should do the trick.\nNo reason for chosing 3 at this stage.
 Wire Wire Line
 	7700 4500 7700 4450
@@ -1125,22 +1110,9 @@ Connection ~ 7700 5000
 Wire Wire Line
 	7700 4450 8200 4450
 Wire Wire Line
-	7700 5000 9100 5000
-Wire Wire Line
 	8200 4450 8200 4750
 Wire Wire Line
 	8200 4750 8350 4750
-$Comp
-L Device:Crystal Y1
-U 1 1 614A7B4C
-P 8350 4550
-F 0 "Y1" V 8304 4681 50  0000 L CNN
-F 1 "27.12MHz 12pF" V 8395 4681 50  0000 L CNN
-F 2 "Crystal:Crystal_SMD_3225-4Pin_3.2x2.5mm" H 8350 4550 50  0001 C CNN
-F 3 "~" H 8350 4550 50  0001 C CNN
-	1    8350 4550
-	0    1    1    0   
-$EndComp
 Wire Wire Line
 	7550 4350 8350 4350
 Wire Wire Line
@@ -1260,4 +1232,100 @@ Text Label 10750 3750 0    50   ~ 0
 TURN6
 Wire Wire Line
 	10750 3700 10750 4000
+$Comp
+L power:+3V3 #PWR0115
+U 1 1 613CB708
+P 5000 4350
+F 0 "#PWR0115" H 5000 4200 50  0001 C CNN
+F 1 "+3V3" H 5015 4523 50  0000 C CNN
+F 2 "" H 5000 4350 50  0001 C CNN
+F 3 "" H 5000 4350 50  0001 C CNN
+	1    5000 4350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5000 4350 5000 4400
+Connection ~ 5000 4400
+Wire Wire Line
+	5700 4450 5700 4400
+$Comp
+L Device:C C13
+U 1 1 613BE34A
+P 5700 4600
+F 0 "C13" H 5815 4646 50  0000 L CNN
+F 1 "100n" H 5815 4555 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 5738 4450 50  0001 C CNN
+F 3 "~" H 5700 4600 50  0001 C CNN
+	1    5700 4600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C14
+U 1 1 613D9BBC
+P 6100 4600
+F 0 "C14" H 6215 4646 50  0000 L CNN
+F 1 "100n" H 6215 4555 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 6138 4450 50  0001 C CNN
+F 3 "~" H 6100 4600 50  0001 C CNN
+	1    6100 4600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5700 4400 6100 4400
+Wire Wire Line
+	6100 4400 6100 4450
+Connection ~ 5700 4400
+Wire Wire Line
+	6100 4750 6100 4800
+Wire Wire Line
+	6100 4800 5700 4800
+$Comp
+L Device:R R9
+U 1 1 6140FFA0
+P 5550 3000
+F 0 "R9" H 5620 3046 50  0000 L CNN
+F 1 "4k7" H 5620 2955 50  0000 L CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" V 5480 3000 50  0001 C CNN
+F 3 "~" H 5550 3000 50  0001 C CNN
+	1    5550 3000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4900 2300 5550 2300
+Wire Wire Line
+	5550 2300 5550 2850
+Connection ~ 4900 2300
+Wire Wire Line
+	4900 2300 4900 2350
+Wire Wire Line
+	5550 3150 5550 3300
+Wire Wire Line
+	5550 3300 6450 3300
+$Comp
+L Device:Crystal_GND24 Y1
+U 1 1 61423C54
+P 8350 4550
+F 0 "Y1" V 8304 4794 50  0000 L CNN
+F 1 "27.12MHz 12pF" V 8395 4794 50  0000 L CNN
+F 2 "Crystal:Crystal_SMD_TXC_7M-4Pin_3.2x2.5mm" H 8350 4550 50  0001 C CNN
+F 3 "~" H 8350 4550 50  0001 C CNN
+	1    8350 4550
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	8550 4550 8600 4550
+Wire Wire Line
+	8600 4550 8600 5000
+Wire Wire Line
+	7700 5000 8100 5000
+Connection ~ 8600 5000
+Wire Wire Line
+	8600 5000 9100 5000
+Wire Wire Line
+	8150 4550 8100 4550
+Wire Wire Line
+	8100 4550 8100 5000
+Connection ~ 8100 5000
+Wire Wire Line
+	8100 5000 8600 5000
 $EndSCHEMATC
