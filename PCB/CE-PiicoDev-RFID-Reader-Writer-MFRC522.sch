@@ -911,8 +911,6 @@ NoConn ~ 7550 4050
 NoConn ~ 7550 4150
 NoConn ~ 6450 2750
 NoConn ~ 7550 2750
-Text Notes 4500 1850 0    50   ~ 0
-De-coupling caps\nConsider allowing for address change\nHeaders requird: Interrupt and RST\nJumper to change the address
 Wire Wire Line
 	6450 2950 6400 2950
 Wire Wire Line
@@ -936,7 +934,7 @@ Wire Wire Line
 Wire Wire Line
 	6050 3050 6450 3050
 Text Label 6250 3300 0    50   ~ 0
-RST
+~RST
 Text Label 6250 3400 0    50   ~ 0
 SDA
 Text Label 6250 3500 0    50   ~ 0
@@ -960,7 +958,7 @@ U 1 1 6159070E
 P 2750 1750
 F 0 "J4" H 2858 1839 50  0000 C CNN
 F 1 "Conn_01x01_Male" H 2858 1840 50  0001 C CNN
-F 2 "Connector_PinHeader_1.27mm:PinHeader_1x01_P1.27mm_Vertical" H 2750 1750 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" H 2750 1750 50  0001 C CNN
 F 3 "~" H 2750 1750 50  0001 C CNN
 	1    2750 1750
 	1    0    0    -1  
@@ -981,7 +979,7 @@ Wire Wire Line
 Wire Wire Line
 	2950 1900 3150 1900
 Text Label 3150 1750 0    50   ~ 0
-RST
+~RST
 Text Label 3150 1900 0    50   ~ 0
 INT
 Wire Wire Line
@@ -1039,8 +1037,6 @@ Wire Wire Line
 	4900 2650 4900 2850
 Wire Wire Line
 	4900 3600 4900 3550
-Wire Wire Line
-	4900 3600 6450 3600
 $Comp
 L power:GND #PWR0114
 U 1 1 613BD9A7
@@ -1097,8 +1093,6 @@ Wire Wire Line
 Connection ~ 5350 4800
 Wire Wire Line
 	5350 4800 5700 4800
-Text Notes 4600 4150 0    50   ~ 0
-3 de-coupling caps should do the trick.\nNo reason for chosing 3 at this stage.
 Wire Wire Line
 	7700 4500 7700 4450
 Connection ~ 7700 4450
@@ -1145,93 +1139,10 @@ Wire Wire Line
 Connection ~ 7100 2200
 Wire Wire Line
 	7100 2200 7200 2200
-$Comp
-L Device:Net-Tie_2 NT1
-U 1 1 613F219A
-P 10750 2550
-F 0 "NT1" V 10704 2594 50  0000 L CNN
-F 1 "Net-Tie_2" V 10795 2594 50  0000 L CNN
-F 2 "PiicoDev RFID MFRC522:NetTie-2_SMD_Pad0.25mm" H 10750 2550 50  0001 C CNN
-F 3 "~" H 10750 2550 50  0001 C CNN
-	1    10750 2550
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:Net-Tie_2 NT2
-U 1 1 613F34A6
-P 10750 2800
-F 0 "NT2" V 10704 2844 50  0000 L CNN
-F 1 "Net-Tie_2" V 10795 2844 50  0000 L CNN
-F 2 "PiicoDev RFID MFRC522:NetTie-2_SMD_Pad0.25mm" H 10750 2800 50  0001 C CNN
-F 3 "~" H 10750 2800 50  0001 C CNN
-	1    10750 2800
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:Net-Tie_2 NT3
-U 1 1 613F36AB
-P 10750 3050
-F 0 "NT3" V 10704 3094 50  0000 L CNN
-F 1 "Net-Tie_2" V 10795 3094 50  0000 L CNN
-F 2 "PiicoDev RFID MFRC522:NetTie-2_SMD_Pad0.25mm" H 10750 3050 50  0001 C CNN
-F 3 "~" H 10750 3050 50  0001 C CNN
-	1    10750 3050
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:Net-Tie_2 NT4
-U 1 1 613F81E6
-P 10750 3300
-F 0 "NT4" V 10704 3344 50  0000 L CNN
-F 1 "Net-Tie_2" V 10795 3344 50  0000 L CNN
-F 2 "PiicoDev RFID MFRC522:NetTie-2_SMD_Pad0.25mm" H 10750 3300 50  0001 C CNN
-F 3 "~" H 10750 3300 50  0001 C CNN
-	1    10750 3300
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:Net-Tie_2 NT5
-U 1 1 613F85C3
-P 10750 3600
-F 0 "NT5" V 10704 3644 50  0000 L CNN
-F 1 "Net-Tie_2" V 10795 3644 50  0000 L CNN
-F 2 "PiicoDev RFID MFRC522:NetTie-2_SMD_Pad0.25mm" H 10750 3600 50  0001 C CNN
-F 3 "~" H 10750 3600 50  0001 C CNN
-	1    10750 3600
-	0    1    1    0   
-$EndComp
 Wire Wire Line
 	10500 3200 10600 3200
 Wire Wire Line
 	10600 3200 10600 2400
-Wire Wire Line
-	10600 2400 10750 2400
-Wire Wire Line
-	10750 2400 10750 2450
-Wire Wire Line
-	10750 2650 10750 2700
-Wire Wire Line
-	10750 2900 10750 2950
-Wire Wire Line
-	10750 3150 10750 3200
-Wire Wire Line
-	10750 3400 10750 3500
-Wire Wire Line
-	10750 4000 10500 4000
-Text Label 10750 2450 0    50   ~ 0
-TURN1
-Text Label 10750 2700 0    50   ~ 0
-TURN2
-Text Label 10750 2950 0    50   ~ 0
-TURN3
-Text Label 10750 3200 0    50   ~ 0
-TURN4
-Text Label 10750 3500 0    50   ~ 0
-TURN5
-Text Label 10750 3750 0    50   ~ 0
-TURN6
-Wire Wire Line
-	10750 3700 10750 4000
 $Comp
 L power:+3V3 #PWR0115
 U 1 1 613CB708
@@ -1328,4 +1239,286 @@ Wire Wire Line
 Connection ~ 8100 5000
 Wire Wire Line
 	8100 5000 8600 5000
+$Comp
+L Device:Net-Tie_2 NT2
+U 1 1 613F34A6
+P 12250 2850
+F 0 "NT2" V 12204 2894 50  0000 L CNN
+F 1 "Net-Tie_2" V 12295 2894 50  0000 L CNN
+F 2 "PiicoDev RFID MFRC522:NetTie-2_SMD_Pad0.25mm" H 12250 2850 50  0001 C CNN
+F 3 "~" H 12250 2850 50  0001 C CNN
+	1    12250 2850
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:Net-Tie_2 NT4
+U 1 1 613F81E6
+P 12250 3450
+F 0 "NT4" V 12204 3494 50  0000 L CNN
+F 1 "Net-Tie_2" V 12295 3494 50  0000 L CNN
+F 2 "PiicoDev RFID MFRC522:NetTie-2_SMD_Pad0.25mm" H 12250 3450 50  0001 C CNN
+F 3 "~" H 12250 3450 50  0001 C CNN
+	1    12250 3450
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:Net-Tie_2 NT3
+U 1 1 613F36AB
+P 12250 3150
+F 0 "NT3" V 12204 3194 50  0000 L CNN
+F 1 "Net-Tie_2" V 12295 3194 50  0000 L CNN
+F 2 "PiicoDev RFID MFRC522:NetTie-2_SMD_Pad0.25mm" H 12250 3150 50  0001 C CNN
+F 3 "~" H 12250 3150 50  0001 C CNN
+	1    12250 3150
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:Net-Tie_2 NT1
+U 1 1 613F219A
+P 12250 2550
+F 0 "NT1" V 12204 2594 50  0000 L CNN
+F 1 "Net-Tie_2" V 12295 2594 50  0000 L CNN
+F 2 "PiicoDev RFID MFRC522:NetTie-2_SMD_Pad0.25mm" H 12250 2550 50  0001 C CNN
+F 3 "~" H 12250 2550 50  0001 C CNN
+	1    12250 2550
+	0    1    1    0   
+$EndComp
+Text Label 12250 3600 0    50   ~ 0
+TURN5A
+Text Label 12250 3300 0    50   ~ 0
+TURN4A
+Text Label 12250 3000 0    50   ~ 0
+TURN3A
+Text Label 12250 2700 0    50   ~ 0
+TURN2A
+Text Label 10600 2400 0    50   ~ 0
+TURN1A
+$Comp
+L Device:Net-Tie_2 NT5
+U 1 1 614E2819
+P 11400 2550
+F 0 "NT5" V 11354 2594 50  0000 L CNN
+F 1 "Net-Tie_2_Top" V 11445 2594 50  0000 L CNN
+F 2 "PiicoDev RFID MFRC522:NetTie-2_SMD_Pad0.25mm" H 11400 2550 50  0001 C CNN
+F 3 "~" H 11400 2550 50  0001 C CNN
+	1    11400 2550
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	11400 2400 11400 2450
+Wire Wire Line
+	10600 2400 11400 2400
+$Comp
+L Device:Net-Tie_2 NT6
+U 1 1 614EFC84
+P 11400 2850
+F 0 "NT6" V 11354 2894 50  0000 L CNN
+F 1 "Net-Tie_2_Top" V 11445 2894 50  0000 L CNN
+F 2 "PiicoDev RFID MFRC522:NetTie-2_SMD_Pad0.25mm" H 11400 2850 50  0001 C CNN
+F 3 "~" H 11400 2850 50  0001 C CNN
+	1    11400 2850
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:Net-Tie_2 NT7
+U 1 1 614F0074
+P 11400 3150
+F 0 "NT7" V 11354 3194 50  0000 L CNN
+F 1 "Net-Tie_2_Top" V 11445 3194 50  0000 L CNN
+F 2 "PiicoDev RFID MFRC522:NetTie-2_SMD_Pad0.25mm" H 11400 3150 50  0001 C CNN
+F 3 "~" H 11400 3150 50  0001 C CNN
+	1    11400 3150
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:Net-Tie_2 NT8
+U 1 1 614F066C
+P 11400 3450
+F 0 "NT8" V 11354 3494 50  0000 L CNN
+F 1 "Net-Tie_2_Top" V 11445 3494 50  0000 L CNN
+F 2 "PiicoDev RFID MFRC522:NetTie-2_SMD_Pad0.25mm" H 11400 3450 50  0001 C CNN
+F 3 "~" H 11400 3450 50  0001 C CNN
+	1    11400 3450
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:Net-Tie_2 NT9
+U 1 1 614F0902
+P 11400 3750
+F 0 "NT9" V 11354 3794 50  0000 L CNN
+F 1 "Net-Tie_2_Top" V 11445 3794 50  0000 L CNN
+F 2 "PiicoDev RFID MFRC522:NetTie-2_SMD_Pad0.25mm" H 11400 3750 50  0001 C CNN
+F 3 "~" H 11400 3750 50  0001 C CNN
+	1    11400 3750
+	0    1    1    0   
+$EndComp
+Text Label 10550 4000 0    50   ~ 0
+TURN6B
+Wire Wire Line
+	12000 2650 12000 2450
+Wire Wire Line
+	11400 2650 12000 2650
+Wire Wire Line
+	12000 2450 12250 2450
+Wire Wire Line
+	11400 2950 12000 2950
+Wire Wire Line
+	11400 3250 12000 3250
+Wire Wire Line
+	11400 3550 12000 3550
+Wire Wire Line
+	11400 3300 12250 3300
+Wire Wire Line
+	12250 2650 12250 2700
+Wire Wire Line
+	12250 2700 11400 2700
+Wire Wire Line
+	11400 2700 11400 2750
+Wire Wire Line
+	12250 2750 12000 2750
+Wire Wire Line
+	12000 2750 12000 2950
+Wire Wire Line
+	11400 3000 11400 3050
+Wire Wire Line
+	12250 2950 12250 3000
+Wire Wire Line
+	12250 3000 11400 3000
+Wire Wire Line
+	12000 3250 12000 3050
+Wire Wire Line
+	12000 3050 12250 3050
+Wire Wire Line
+	12250 3250 12250 3300
+Wire Wire Line
+	11400 3300 11400 3350
+Wire Wire Line
+	12000 3550 12000 3350
+Wire Wire Line
+	12000 3350 12250 3350
+Wire Wire Line
+	12250 3550 12250 3600
+Wire Wire Line
+	12250 3600 11400 3600
+Wire Wire Line
+	11400 3600 11400 3650
+Wire Wire Line
+	11400 3850 11400 3900
+Wire Wire Line
+	11400 3900 12000 3900
+Wire Wire Line
+	12000 3900 12000 3650
+Wire Wire Line
+	12000 3650 12250 3650
+Text Label 12000 2450 0    50   ~ 0
+TURN1B
+Text Label 12000 2750 0    50   ~ 0
+TURN2B
+Text Label 12000 3050 0    50   ~ 0
+TURN3B
+Text Label 12000 3350 0    50   ~ 0
+TURN4B
+Text Label 12000 3650 0    50   ~ 0
+TURN5B
+$Comp
+L Device:Net-Tie_2 NT10
+U 1 1 6163618C
+P 12250 3750
+F 0 "NT10" V 12204 3794 50  0000 L CNN
+F 1 "Net-Tie_2" V 12295 3794 50  0000 L CNN
+F 2 "PiicoDev RFID MFRC522:NetTie-2_SMD_Pad0.25mm" H 12250 3750 50  0001 C CNN
+F 3 "~" H 12250 3750 50  0001 C CNN
+	1    12250 3750
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	12250 3850 12250 4000
+$Comp
+L Device:Net-Tie_2 NT11
+U 1 1 61697B3A
+P 12100 4000
+F 0 "NT11" V 12054 4044 50  0000 L CNN
+F 1 "Net-Tie_2" V 12145 4044 50  0000 L CNN
+F 2 "PiicoDev RFID MFRC522:NetTie-2_SMD_Pad0.25mm" H 12100 4000 50  0001 C CNN
+F 3 "~" H 12100 4000 50  0001 C CNN
+	1    12100 4000
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	12250 4000 12200 4000
+Wire Wire Line
+	10500 4000 12000 4000
+Text Label 12250 4000 0    50   ~ 0
+TURN6A
+$Comp
+L Transistor_FET:BSS138 Q1
+U 1 1 61721C80
+P 5000 3800
+F 0 "Q1" H 5205 3846 50  0000 L CNN
+F 1 "BSS138" H 5205 3755 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 5200 3725 50  0001 L CIN
+F 3 "https://www.onsemi.com/pub/Collateral/BSS138-D.PDF" H 5000 3800 50  0001 L CNN
+	1    5000 3800
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	5250 3600 5250 3800
+Wire Wire Line
+	5250 3800 5200 3800
+Wire Wire Line
+	5250 3600 6450 3600
+$Comp
+L power:GND #PWR05
+U 1 1 6175382D
+P 4900 4000
+F 0 "#PWR05" H 4900 3750 50  0001 C CNN
+F 1 "GND" H 4905 3827 50  0000 C CNN
+F 2 "" H 4900 4000 50  0001 C CNN
+F 3 "" H 4900 4000 50  0001 C CNN
+	1    4900 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R 4k7
+U 1 1 6175452D
+P 4500 3400
+F 0 "4k7" H 4570 3446 50  0000 L CNN
+F 1 "R" H 4570 3355 50  0000 L CNN
+F 2 "" V 4430 3400 50  0001 C CNN
+F 3 "~" H 4500 3400 50  0001 C CNN
+	1    4500 3400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4500 3250 4900 3250
+Connection ~ 4900 3250
+Wire Wire Line
+	4500 3550 4900 3550
+Connection ~ 4900 3550
+$Comp
+L CoreElectronics_Artwork:Label_PCB_Art G4
+U 1 1 617897A9
+P 4200 6050
+F 0 "G4" H 4328 6096 50  0000 L CNN
+F 1 "Label_PCB_Art" H 4328 6005 50  0000 L CNN
+F 2 "PiicoDev RFID MFRC522:Label_Reset_Bar_Reverse Arrow" H 4200 6050 50  0001 C CNN
+F 3 "" H 4200 6050 50  0001 C CNN
+	1    4200 6050
+	1    0    0    -1  
+$EndComp
+$Comp
+L CoreElectronics_Artwork:Label_PCB_Art G5
+U 1 1 6178A645
+P 4200 6300
+F 0 "G5" H 4328 6346 50  0000 L CNN
+F 1 "Label_PCB_Art" H 4328 6255 50  0000 L CNN
+F 2 "PiicoDev RFID MFRC522:Label_Reset_Bar" H 4200 6300 50  0001 C CNN
+F 3 "" H 4200 6300 50  0001 C CNN
+	1    4200 6300
+	1    0    0    -1  
+$EndComp
+Text Notes 4100 6100 0    50   ~ 0
+~RST
+Text Notes 4100 6350 0    50   ~ 0
+~RST
 $EndSCHEMATC
