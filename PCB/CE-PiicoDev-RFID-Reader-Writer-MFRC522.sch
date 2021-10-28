@@ -1521,4 +1521,6 @@ Text Notes 4100 6100 0    50   ~ 0
 ~RST
 Text Notes 4100 6350 0    50   ~ 0
 ~RST
+Text Notes 6800 1400 0    50   ~ 0
+Frequency\n13.56 MHz
 $EndSCHEMATC
