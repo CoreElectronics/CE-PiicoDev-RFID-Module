@@ -1001,7 +1001,7 @@ L Device:R R8
 U 1 1 61390113
 P 4900 3000
 F 0 "R8" H 4970 3046 50  0000 L CNN
-F 1 "R" H 4970 2955 50  0000 L CNN
+F 1 "4k7" H 4970 2955 50  0000 L CNN
 F 2 "Resistor_SMD:R_0402_1005Metric" V 4830 3000 50  0001 C CNN
 F 3 "~" H 4900 3000 50  0001 C CNN
 	1    4900 3000
@@ -1523,4 +1523,6 @@ Text Notes 4100 6350 0    50   ~ 0
 ~RST
 Text Notes 6800 1400 0    50   ~ 0
 Frequency\n13.56 MHz
+Text Notes 12500 4500 0    50   ~ 0
+Coil\nL = 2.7 uH\nR = 1.0 ohm\nQ = 230
 $EndSCHEMATC
