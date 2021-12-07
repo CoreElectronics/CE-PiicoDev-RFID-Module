@@ -1567,4 +1567,26 @@ Wire Wire Line
 Connection ~ 5400 3500
 Wire Wire Line
 	5400 3500 5400 3400
+$Comp
+L CoreElectronics_Artwork:Label_PCB_Art G7
+U 1 1 61AF4072
+P 4150 6650
+F 0 "G7" H 4278 6696 50  0000 L CNN
+F 1 "Label_PCB_Art" H 4278 6605 50  0000 L CNN
+F 2 "PiicoDev RFID MFRC522:Art_2" H 4150 6650 50  0001 C CNN
+F 3 "" H 4150 6650 50  0001 C CNN
+	1    4150 6650
+	1    0    0    -1  
+$EndComp
+$Comp
+L CoreElectronics_Artwork:Label_PCB_Art G6
+U 1 1 61AF4D20
+P 4150 6400
+F 0 "G6" H 4278 6446 50  0000 L CNN
+F 1 "Label_PCB_Art" H 4278 6355 50  0000 L CNN
+F 2 "PiicoDev RFID MFRC522:Art_1" H 4150 6400 50  0001 C CNN
+F 3 "" H 4150 6400 50  0001 C CNN
+	1    4150 6400
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
