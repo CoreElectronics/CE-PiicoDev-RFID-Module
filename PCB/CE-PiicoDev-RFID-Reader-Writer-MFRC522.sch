@@ -5,8 +5,8 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "PiicoDev RFID Reader/Writer MFRC522"
-Date "2021-11-26"
-Rev "02"
+Date "2021-12-14"
+Rev "03"
 Comp "Core Electronics"
 Comment1 "Designed at Core Electronics by Peter Johnston"
 Comment2 "PiicoDev and the PiicoDev logo are trademarks of Core Electronics Pty Ltd."
@@ -41,7 +41,7 @@ U 1 1 609A5516
 P 9900 6250
 F 0 "G2" H 9900 6044 60  0001 C CNN
 F 1 "LOGO_CoreElectronics_no-text" H 9900 6456 60  0001 C CNN
-F 2 "CoreElectronics_Artwork:CoreElectronics_logo_5mm" H 9900 6250 50  0001 C CNN
+F 2 "" H 9900 6250 50  0001 C CNN
 F 3 "" H 9900 6250 50  0001 C CNN
 	1    9900 6250
 	1    0    0    -1  
@@ -295,12 +295,8 @@ Wire Wire Line
 	900  2200 1250 2200
 Text Label 2800 1600 0    50   ~ 0
 SCL
-Wire Wire Line
-	2800 1600 2600 1600
 Text Label 2800 1500 0    50   ~ 0
 SDA
-Wire Wire Line
-	2800 1500 2600 1500
 $Comp
 L power:+3V3 #PWR?
 U 1 1 609F9B1E
@@ -327,27 +323,10 @@ F 3 "" H 2950 1300 50  0001 C CNN
 	1    2950 1300
 	0    -1   -1   0   
 $EndComp
-Wire Wire Line
-	2950 1300 2600 1300
-Wire Wire Line
-	2600 1400 2950 1400
 Text Notes 650  1000 0    79   ~ 0
 PiicoDev Connectors
 Text Notes 2150 1000 0    79   ~ 0
 Breakout Header
-$Comp
-L CoreElectronics_Components:Conn_PiicoDev_header_01x04_Male J?
-U 1 1 609F9B2E
-P 2400 1500
-AR Path="/609C5735/609F9B2E" Ref="J?"  Part="1" 
-AR Path="/609F9B2E" Ref="J3"  Part="1" 
-F 0 "J3" H 2400 1850 50  0000 C CNN
-F 1 "Conn_PiicoDev_header_01x04_Male" H 2421 1807 50  0001 C CNN
-F 2 "CoreElectronics_Components:PiicoDev_header_4pin" H 2400 1500 50  0001 C CNN
-F 3 "~" H 2400 1500 50  0001 C CNN
-	1    2400 1500
-	1    0    0    -1  
-$EndComp
 Wire Notes Line
 	650  2500 650  1000
 Wire Notes Line
@@ -905,61 +884,13 @@ F 3 "https://www.nxp.com/docs/en/data-sheet/MFRC522.pdf" H 5900 3350 50  0001 C 
 	1    6050 3150
 	1    0    0    -1  
 $EndComp
-$Comp
-L Connector:Conn_01x01_Male J4
-U 1 1 6159070E
-P 2400 1750
-F 0 "J4" H 2508 1839 50  0000 C CNN
-F 1 "Conn_01x01_Male" H 2508 1840 50  0001 C CNN
-F 2 "CoreElectronics_Components:PiicoDev_header_1pin" H 2400 1750 50  0001 C CNN
-F 3 "~" H 2400 1750 50  0001 C CNN
-	1    2400 1750
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:Conn_01x01_Male J5
-U 1 1 61591567
-P 2400 1900
-F 0 "J5" H 2508 1989 50  0000 C CNN
-F 1 "Conn_01x01_Male" H 2508 1990 50  0001 C CNN
-F 2 "CoreElectronics_Components:PiicoDev_header_1pin_INT_uninverted" H 2400 1900 50  0001 C CNN
-F 3 "~" H 2400 1900 50  0001 C CNN
-	1    2400 1900
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2600 1750 2800 1750
-Wire Wire Line
-	2600 1900 2800 1900
-Text Label 2800 1750 0    50   ~ 0
+Text Label 2800 1800 0    50   ~ 0
 ~RST
-Text Label 2800 1900 0    50   ~ 0
+Text Label 2800 1700 0    50   ~ 0
 INT
 Wire Wire Line
 	8150 4550 8150 4600
 Connection ~ 8150 4550
-$Comp
-L Device:LED D2
-U 1 1 6138F2E9
-P 4200 2950
-F 0 "D2" V 4239 2832 50  0000 R CNN
-F 1 "LED" V 4148 2832 50  0000 R CNN
-F 2 "CoreElectronics_Components:LED_1206_3216Metric_ReverseMount_Hole1.8x2.4mm" H 4200 2950 50  0001 C CNN
-F 3 "~" H 4200 2950 50  0001 C CNN
-	1    4200 2950
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Device:R R8
-U 1 1 61390113
-P 4200 2550
-F 0 "R8" H 4270 2596 50  0000 L CNN
-F 1 "4k7" H 4270 2505 50  0000 L CNN
-F 2 "Resistor_SMD:R_0402_1005Metric" V 4130 2550 50  0001 C CNN
-F 3 "~" H 4200 2550 50  0001 C CNN
-	1    4200 2550
-	1    0    0    -1  
-$EndComp
 $Comp
 L power:+3V3 #PWR0113
 U 1 1 613921B9
@@ -972,24 +903,7 @@ F 3 "" H 4200 1800 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4200 2700 4200 2800
-$Comp
-L Jumper:SolderJumper_2_Bridged JP3
-U 1 1 613A247F
-P 4200 2050
-F 0 "JP3" V 4154 2118 50  0000 L CNN
-F 1 "SolderJumper_2_Bridged" V 4245 2118 50  0000 L CNN
-F 2 "CoreElectronics_Components:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm" H 4200 2050 50  0001 C CNN
-F 3 "~" H 4200 2050 50  0001 C CNN
-	1    4200 2050
-	0    1    1    0   
-$EndComp
-Wire Wire Line
 	4200 1800 4200 1850
-Wire Wire Line
-	4200 2200 4200 2400
-Wire Wire Line
-	4200 3150 4200 3100
 $Comp
 L power:GND #PWR0114
 U 1 1 613BD9A7
@@ -1149,12 +1063,9 @@ F 3 "~" H 4850 2550 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4200 1850 4850 1850
+	4200 1850 4250 1850
 Wire Wire Line
 	4850 1850 4850 2400
-Connection ~ 4200 1850
-Wire Wire Line
-	4200 1850 4200 1900
 Wire Wire Line
 	4850 2700 4850 2850
 $Comp
@@ -1236,38 +1147,6 @@ F 3 "~" H 10400 3300 50  0001 C CNN
 $EndComp
 Text Label 10400 3150 0    50   ~ 0
 TURN6A
-Wire Wire Line
-	4550 3150 4550 3350
-Wire Wire Line
-	4550 3350 4500 3350
-$Comp
-L power:GND #PWR05
-U 1 1 6175382D
-P 4200 3550
-F 0 "#PWR05" H 4200 3300 50  0001 C CNN
-F 1 "GND" H 4205 3377 50  0000 C CNN
-F 2 "" H 4200 3550 50  0001 C CNN
-F 3 "" H 4200 3550 50  0001 C CNN
-	1    4200 3550
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R10
-U 1 1 6175452D
-P 3800 2950
-F 0 "R10" H 3870 2996 50  0000 L CNN
-F 1 "4k7" H 3870 2905 50  0000 L CNN
-F 2 "Resistor_SMD:R_0402_1005Metric" V 3730 2950 50  0001 C CNN
-F 3 "~" H 3800 2950 50  0001 C CNN
-	1    3800 2950
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3800 2800 4200 2800
-Connection ~ 4200 2800
-Wire Wire Line
-	3800 3100 4200 3100
-Connection ~ 4200 3100
 $Comp
 L CoreElectronics_Artwork:Label_PCB_Art G4
 U 1 1 617897A9
@@ -1299,20 +1178,7 @@ f = 13.56 MHz\n\nCoil (as measured)\nL = 470 nH\nR = 0.3 ohm
 Text Notes 9050 5050 0    50   ~ 0
 /Design Files/MFRC522.m
 Wire Wire Line
-	4550 3150 5500 3150
-Wire Wire Line
 	4850 2850 5500 2850
-$Comp
-L Transistor_FET:BSS138 Q1
-U 1 1 61721C80
-P 4300 3350
-F 0 "Q1" H 4505 3396 50  0000 L CNN
-F 1 "BSS138" H 4505 3305 50  0000 L CNN
-F 2 "Package_TO_SOT_SMD:SOT-23" H 4500 3275 50  0001 L CIN
-F 3 "https://www.onsemi.com/pub/Collateral/BSS138-D.PDF" H 4300 3350 50  0001 L CNN
-	1    4300 3350
-	-1   0    0    -1  
-$EndComp
 $Comp
 L Device:Net-Tie_2 NT8
 U 1 1 614F066C
@@ -1422,21 +1288,6 @@ Wire Wire Line
 	5450 3600 5450 3700
 Wire Wire Line
 	5500 3700 5450 3700
-Connection ~ 5450 3700
-Wire Wire Line
-	5500 3900 5450 3900
-Connection ~ 5450 3900
-$Comp
-L power:GND #PWR0116
-U 1 1 61A25A71
-P 5450 4050
-F 0 "#PWR0116" H 5450 3800 50  0001 C CNN
-F 1 "GND" H 5455 3877 50  0000 C CNN
-F 2 "" H 5450 4050 50  0001 C CNN
-F 3 "" H 5450 4050 50  0001 C CNN
-	1    5450 4050
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	8100 2750 8700 2750
 $Comp
@@ -1500,11 +1351,7 @@ Connection ~ 9450 2750
 Wire Wire Line
 	9450 3550 10400 3550
 Wire Wire Line
-	5450 3700 5450 3900
-Wire Wire Line
 	5500 3800 5400 3800
-Wire Wire Line
-	5400 3800 5400 3500
 $Comp
 L power:+3V3 #PWR0117
 U 1 1 61A856C1
@@ -1516,19 +1363,6 @@ F 3 "" H 5400 3400 50  0001 C CNN
 	1    5400 3400
 	1    0    0    -1  
 $EndComp
-$Comp
-L Jumper:SolderJumper_2_Open JP4
-U 1 1 61A874F4
-P 4450 3800
-F 0 "JP4" V 4404 3868 50  0000 L CNN
-F 1 "SolderJumper_2_Open" V 4495 3868 50  0000 L CNN
-F 2 "CoreElectronics_Components:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 4450 3800 50  0001 C CNN
-F 3 "~" H 4450 3800 50  0001 C CNN
-	1    4450 3800
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	5450 3900 5450 4050
 $Comp
 L Device:R R6
 U 1 1 61A91638
@@ -1557,16 +1391,7 @@ Wire Wire Line
 	4450 4000 4450 4050
 Wire Wire Line
 	4450 4350 4450 4400
-Wire Wire Line
-	4450 4000 4450 3950
 Connection ~ 4450 4000
-Wire Wire Line
-	4450 3650 4450 3500
-Wire Wire Line
-	4450 3500 5400 3500
-Connection ~ 5400 3500
-Wire Wire Line
-	5400 3500 5400 3400
 $Comp
 L CoreElectronics_Artwork:Label_PCB_Art G7
 U 1 1 61AF4072
@@ -1589,4 +1414,86 @@ F 3 "" H 4150 6400 50  0001 C CNN
 	1    4150 6400
 	1    0    0    -1  
 $EndComp
+$Comp
+L Switch:SW_DIP_x02 SW1
+U 1 1 61B8AD1D
+P 4250 3550
+F 0 "SW1" V 4296 3420 50  0000 R CNN
+F 1 "SW_DIP_x02" V 4205 3420 50  0000 R CNN
+F 2 "CoreElectronics_Components:SW_DIP_x02_Slide_CHS-02A1" H 4250 3550 50  0001 C CNN
+F 3 "~" H 4250 3550 50  0001 C CNN
+	1    4250 3550
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	4550 3150 5500 3150
+Wire Wire Line
+	5400 3400 5400 3800
+$Comp
+L Device:R R7
+U 1 1 61B9EEBA
+P 4150 4200
+F 0 "R7" H 4220 4246 50  0000 L CNN
+F 1 "10k" H 4220 4155 50  0000 L CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" V 4080 4200 50  0001 C CNN
+F 3 "~" H 4150 4200 50  0001 C CNN
+	1    4150 4200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4150 4350 4150 4400
+Wire Wire Line
+	4150 4400 4450 4400
+Connection ~ 4450 4400
+Wire Wire Line
+	4150 3250 4150 1850
+Wire Wire Line
+	4150 1850 4200 1850
+Connection ~ 4200 1850
+Wire Wire Line
+	4250 3250 4250 1850
+Connection ~ 4250 1850
+Wire Wire Line
+	4250 1850 4850 1850
+Wire Wire Line
+	4150 3850 4150 3900
+Wire Wire Line
+	4150 3900 4150 4050
+Connection ~ 4150 3900
+Wire Wire Line
+	4250 3850 4250 3950
+Wire Wire Line
+	4250 3950 4450 3950
+Wire Wire Line
+	4450 3950 4450 4000
+Wire Wire Line
+	4150 3900 5500 3900
+Wire Wire Line
+	5450 3700 5450 4400
+Wire Wire Line
+	5450 4400 4450 4400
+Connection ~ 5450 3700
+$Comp
+L Connector:Conn_01x06_Male J3
+U 1 1 61B8B794
+P 2400 1500
+F 0 "J3" H 2508 1881 50  0000 C CNN
+F 1 "Conn_01x06_Male" H 2508 1790 50  0000 C CNN
+F 2 "CoreElectronics_Components:PiicoDev_header_6pin" H 2400 1500 50  0001 C CNN
+F 3 "~" H 2400 1500 50  0001 C CNN
+	1    2400 1500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2600 1300 2950 1300
+Wire Wire Line
+	2600 1400 2950 1400
+Wire Wire Line
+	2600 1500 2800 1500
+Wire Wire Line
+	2600 1600 2800 1600
+Wire Wire Line
+	2600 1700 2800 1700
+Wire Wire Line
+	2600 1800 2800 1800
 $EndSCHEMATC
