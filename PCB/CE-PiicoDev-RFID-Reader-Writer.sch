@@ -5,7 +5,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "PiicoDev RFID Reader/Writer MFRC522"
-Date "2021-12-14"
+Date "2021-12-21"
 Rev "03"
 Comp "Core Electronics"
 Comment1 "Designed at Core Electronics by Peter Johnston"
@@ -850,17 +850,6 @@ Wire Wire Line
 Wire Wire Line
 	5450 1750 5850 1750
 Connection ~ 5850 1750
-$Comp
-L power:GND #PWR0112
-U 1 1 6156B677
-P 5100 2650
-F 0 "#PWR0112" H 5100 2400 50  0001 C CNN
-F 1 "GND" H 5105 2477 50  0000 C CNN
-F 2 "" H 5100 2650 50  0001 C CNN
-F 3 "" H 5100 2650 50  0001 C CNN
-	1    5100 2650
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	5100 2650 5100 2600
 Wire Wire Line
@@ -879,7 +868,7 @@ U 1 1 6158E330
 P 6050 3150
 F 0 "U1" H 6050 1627 50  0000 C CNN
 F 1 "MFRC522" H 6050 1536 50  0000 C CNN
-F 2 "Package_DFN_QFN:VQFN-32-1EP_5x5mm_P0.5mm_EP3.1x3.1mm" H 5900 3350 50  0001 C CNN
+F 2 "Package_DFN_QFN:VQFN-32-1EP_5x5mm_P0.5mm_EP3.1x3.1mm_ThermalVias" H 5900 3350 50  0001 C CNN
 F 3 "https://www.nxp.com/docs/en/data-sheet/MFRC522.pdf" H 5900 3350 50  0001 C CNN
 	1    6050 3150
 	1    0    0    -1  
@@ -1147,32 +1136,6 @@ F 3 "~" H 10400 3300 50  0001 C CNN
 $EndComp
 Text Label 10400 3150 0    50   ~ 0
 TURN6A
-$Comp
-L CoreElectronics_Artwork:Label_PCB_Art G4
-U 1 1 617897A9
-P 4150 6900
-F 0 "G4" H 4278 6946 50  0000 L CNN
-F 1 "Label_PCB_Art" H 4278 6855 50  0000 L CNN
-F 2 "PiicoDev RFID MFRC522:Label_Reset_Bar_Reverse Arrow" H 4150 6900 50  0001 C CNN
-F 3 "" H 4150 6900 50  0001 C CNN
-	1    4150 6900
-	1    0    0    -1  
-$EndComp
-$Comp
-L CoreElectronics_Artwork:Label_PCB_Art G5
-U 1 1 6178A645
-P 4150 7150
-F 0 "G5" H 4278 7196 50  0000 L CNN
-F 1 "Label_PCB_Art" H 4278 7105 50  0000 L CNN
-F 2 "PiicoDev RFID MFRC522:Label_Reset_Bar" H 4150 7150 50  0001 C CNN
-F 3 "" H 4150 7150 50  0001 C CNN
-	1    4150 7150
-	1    0    0    -1  
-$EndComp
-Text Notes 4050 6950 0    50   ~ 0
-~RST
-Text Notes 4050 7200 0    50   ~ 0
-~RST
 Text Notes 4050 5300 0    50   ~ 0
 f = 13.56 MHz\n\nCoil (as measured)\nL = 470 nH\nR = 0.3 ohm
 Text Notes 9050 5050 0    50   ~ 0
@@ -1210,8 +1173,8 @@ $Comp
 L Device:R R11
 U 1 1 61AFBFE8
 P 5100 2950
-F 0 "R11" V 4893 2950 50  0000 C CNN
-F 1 "120R" V 4984 2950 50  0000 C CNN
+F 0 "R11" V 5100 2950 50  0000 C CNN
+F 1 "120R" V 5200 2950 50  0000 C CNN
 F 2 "Resistor_SMD:R_0402_1005Metric" V 5030 2950 50  0001 C CNN
 F 3 "~" H 5100 2950 50  0001 C CNN
 	1    5100 2950
@@ -1496,4 +1459,15 @@ Wire Wire Line
 	2600 1700 2800 1700
 Wire Wire Line
 	2600 1800 2800 1800
+$Comp
+L power:GND #PWR0112
+U 1 1 6156B677
+P 5100 2650
+F 0 "#PWR0112" H 5100 2400 50  0001 C CNN
+F 1 "GND" H 5100 2500 50  0000 C CNN
+F 2 "" H 5100 2650 50  0001 C CNN
+F 3 "" H 5100 2650 50  0001 C CNN
+	1    5100 2650
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
