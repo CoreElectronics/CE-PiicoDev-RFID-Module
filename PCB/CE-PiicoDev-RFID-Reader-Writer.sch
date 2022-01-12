@@ -4,9 +4,9 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
-Title "PiicoDev RFID Reader/Writer MFRC522"
-Date "2021-12-23"
-Rev "04"
+Title "PiicoDev RFID Module"
+Date "2022-01-12"
+Rev "10"
 Comp "Core Electronics"
 Comment1 "Designed at Core Electronics by Peter Johnston"
 Comment2 "PiicoDev and the PiicoDev logo are trademarks of Core Electronics Pty Ltd."
@@ -982,8 +982,6 @@ Wire Wire Line
 	8100 3150 9050 3150
 Wire Wire Line
 	8100 3550 8700 3550
-Text Notes 8150 2350 0    50   ~ 0
-R5 To be decided on
 Wire Wire Line
 	6050 1750 6150 1750
 Wire Wire Line
@@ -1138,8 +1136,6 @@ Text Label 10400 3150 0    50   ~ 0
 TURN6A
 Text Notes 4050 5300 0    50   ~ 0
 f = 13.56 MHz\n\nCoil (as measured)\nL = 470 nH\nR = 0.3 ohm
-Text Notes 9050 5050 0    50   ~ 0
-/Design Files/MFRC522.m
 Wire Wire Line
 	4850 2850 5500 2850
 $Comp
@@ -1184,62 +1180,6 @@ Wire Wire Line
 	5250 2950 5500 2950
 Wire Wire Line
 	4950 2950 4750 2950
-$Comp
-L Connector:TestPoint TP3
-U 1 1 618A1A4D
-P 7050 2700
-F 0 "TP3" H 7108 2818 50  0000 L CNN
-F 1 "TestPoint" H 7108 2727 50  0000 L CNN
-F 2 "CoreElectronics_Components:TestPoint_Pad_0.7x0.7mm" H 7250 2700 50  0001 C CNN
-F 3 "~" H 7250 2700 50  0001 C CNN
-	1    7050 2700
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:TestPoint TP4
-U 1 1 618A2E15
-P 7050 3350
-F 0 "TP4" H 7108 3468 50  0000 L CNN
-F 1 "TestPoint" H 7108 3377 50  0000 L CNN
-F 2 "CoreElectronics_Components:TestPoint_Pad_0.7x0.7mm" H 7250 3350 50  0001 C CNN
-F 3 "~" H 7250 3350 50  0001 C CNN
-	1    7050 3350
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	7050 2700 7050 2750
-Connection ~ 7050 2750
-Wire Wire Line
-	7050 3350 7050 3400
-Connection ~ 7050 3400
-$Comp
-L Connector:TestPoint TP1
-U 1 1 618B17E8
-P 6750 1800
-F 0 "TP1" H 6808 1918 50  0000 L CNN
-F 1 "TestPoint" H 6808 1827 50  0000 L CNN
-F 2 "CoreElectronics_Components:TestPoint_Pad_0.7x0.7mm" H 6950 1800 50  0001 C CNN
-F 3 "~" H 6950 1800 50  0001 C CNN
-	1    6750 1800
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	6750 1800 6750 1850
-Connection ~ 6750 1850
-$Comp
-L Connector:TestPoint TP2
-U 1 1 618B9830
-P 6900 2300
-F 0 "TP2" H 6958 2418 50  0000 L CNN
-F 1 "TestPoint" H 6958 2327 50  0000 L CNN
-F 2 "CoreElectronics_Components:TestPoint_Pad_0.7x0.7mm" H 7100 2300 50  0001 C CNN
-F 3 "~" H 7100 2300 50  0001 C CNN
-	1    6900 2300
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	6900 2300 6900 2350
-Connection ~ 6900 2350
 Wire Wire Line
 	5500 3500 5450 3500
 Wire Wire Line
@@ -1349,12 +1289,7 @@ F 3 "" H 4450 4400 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	5500 4000 4450 4000
-Wire Wire Line
-	4450 4000 4450 4050
-Wire Wire Line
 	4450 4350 4450 4400
-Connection ~ 4450 4000
 $Comp
 L CoreElectronics_Artwork:Label_PCB_Art G7
 U 1 1 61AF4072
@@ -1419,18 +1354,9 @@ Connection ~ 4250 1850
 Wire Wire Line
 	4250 1850 4850 1850
 Wire Wire Line
-	4150 3850 4150 3900
-Wire Wire Line
-	4150 3900 4150 4050
-Connection ~ 4150 3900
-Wire Wire Line
-	4250 3850 4250 3950
+	4250 3850 4250 3900
 Wire Wire Line
 	4250 3950 4450 3950
-Wire Wire Line
-	4450 3950 4450 4000
-Wire Wire Line
-	4150 3900 5500 3900
 Wire Wire Line
 	5450 3700 5450 4400
 Wire Wire Line
@@ -1470,4 +1396,20 @@ F 3 "" H 5100 2650 50  0001 C CNN
 	1    5100 2650
 	1    0    0    -1  
 $EndComp
+Text Notes 5400 5350 0    50   ~ 0
+ ASW\n 1 2\n[0 0] = 0x2C\n[1 0] = 0x2D\n[0 1] = 0x2E\n[1 1] = 0x2F
+Wire Wire Line
+	4450 3950 4450 4050
+Wire Wire Line
+	5500 4000 4150 4000
+Connection ~ 4150 4000
+Wire Wire Line
+	4150 4000 4150 4050
+Wire Wire Line
+	4150 3850 4150 4000
+Wire Wire Line
+	5500 3900 4250 3900
+Connection ~ 4250 3900
+Wire Wire Line
+	4250 3900 4250 3950
 $EndSCHEMATC
